@@ -1,0 +1,12 @@
+# create virtual environment
+python3 -m venv venv
+# activate the virtual environment run
+source env/bin/activate
+
+# create requirements.txt file and put all packages in it
+# run
+pip install -r requirements.txt
+# this will install all packages in venv
+
+# start the application
+uvicorn main:app
