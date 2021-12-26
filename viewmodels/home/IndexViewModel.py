@@ -1,10 +1,10 @@
 from services import package_service, user_service
-from viewmodels.base.ViewModelBase import ViewModelBase
+from viewmodels.base.BaseViewModel import BaseViewModel
 from starlette.requests import Request
 from typing import List
 
 
-class ViewModelIndex(ViewModelBase):
+class IndexViewModel(BaseViewModel):
     def __init__(self, request: Request):
         super().__init__(request)
         self.release_count: int = package_service.release_count()
