@@ -1,19 +1,30 @@
-import fastapi.responses
-from fastapi import FastAPI
-from fastapi_chameleon import template, global_init
 import uvicorn
+from fastapi import FastAPI
+from fastapi_chameleon import global_init
+from starlette.staticfiles import StaticFiles
 
-global_init('templates')
+from views import home
+from views import account
+from views import packages
+
 app = FastAPI()
 
 
-@app.get('/')
-@template(template_file='index.html')
-def index(user: str = 'anon'):
+def main():
+    configure()
+    uvicorn.run(app, host='localhost', port=8000)
 
-    return {
-        'user_name': user
-    }
+
+def configure():
+
+    global_init('templates') # configure template folder
+    app.mount('/static', StaticFiles(directory='static'), name='static') # configure static folder
+    app.include_router(home.router)
+    app.include_router(account.router)
+    app.include_router(packages.router)
+
 
 if __name__ == '__main__':
-    uvicorn.run  (app)
+    main()
+else:
+    configure()
