@@ -16,3 +16,5 @@ uvicorn main:app --reload
 # create the static folder, mount it in the main
 # library to serve static files asynchronously:
 aiofiles
+
+# next watch 06 Users and html forms
