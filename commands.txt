@@ -1,3 +1,5 @@
+# from a mediocre tutorial talkpython full web apps with fastapi
+
 # create virtual environment
 python3 -m venv venv
 # activate the virtual environment run
