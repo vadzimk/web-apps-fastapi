@@ -17,4 +17,5 @@ uvicorn main:app --reload
 # library to serve static files asynchronously:
 aiofiles
 
-# next watch 06 Users and html forms
+# next Storing data with sqlalchemy - not good quality here because sqlalchemy changed so much since
+# in production the app is run by the server gunicorn

@@ -3,3 +3,4 @@ uvicorn
 fastapi-chameleon
 aiofiles
 python-multipart
+SQLAlchemy

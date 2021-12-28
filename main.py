@@ -7,7 +7,11 @@ from views import home
 from views import account
 from views import packages
 
-app = FastAPI()
+app = FastAPI(
+    # disables swagger docs for production
+    # docs_url=None,
+    # redoc_url=None
+)
 
 
 def main():
